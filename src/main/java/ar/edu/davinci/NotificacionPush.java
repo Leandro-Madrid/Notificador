@@ -8,7 +8,7 @@ public class NotificacionPush extends NotificacionDecorator {
     @Override
     public void enviar_mensaje(String mensaje) {
         String mensajeConPush = "Notificación Push: " + mensaje;
-        super.enviar_mensaje(mensajeConPush);
+        notificacion.enviar_mensaje(mensajeConPush);
     }
 }
 

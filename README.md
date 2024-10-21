@@ -4,7 +4,7 @@ Vamos a simular un sistema de notificación que permite enviar mensajes a travé
 
 Define una interfaz base llamada `Notificacion` que tenga un método `enviar_mensaje(mensaje: str)`. Crea una clase concreta llamada `NotificacionBase` que implemente la interfaz `Notificacion`. Esta clase representará la funcionalidad básica de enviar un mensaje.
 
-Crea clases decoradoras para cada tipo de canal de notificación: `CorreoElectronico`, `SMS` y `NotificacionPush`. Estas clases deben extender la clase `NotificacionDecorator`, que es una clase abstracta que implementa `Notificacion`. Cada clase decoradora debe agregar su propia funcionalidad al mensaje básico, como agregar encabezados para correo electrónico, prefijos para SMS, etc.
+Crea clases decoradoras para cada tipo de canal de notificación: `CorreoElectronico`, `SMS` y `NotificacionPush`. Estas clases deben extender la clase `NotificacionDecorator`, que es una clase abstracta que implementa `Notificacion`. Cada clase decoradora debe modificar el mensaje básico de acuerdo con su canal y luego enviarlo utilizando la notificación subyacente.
 
 Finalmente, crea un cliente de prueba que demuestre cómo se puede utilizar este sistema de notificación. Crea instancias de cada tipo de notificación decorada y envía un mensaje a través de cada una.
 
@@ -17,10 +17,10 @@ Finalmente, crea un cliente de prueba que demuestre cómo se puede utilizar este
   - Clase que envía el mensaje básico.
 
 - **Decorator**: `NotificacionDecorator`
-  - Clase abstracta que extiende la funcionalidad de las notificaciones.
+  - Clase abstracta que actúa como decorador, manteniendo una referencia a `Notificacion`.
 
 - **Decoradores**: `CorreoElectronico`, `SMS`, `NotificacionPush`
-  - Clases que añaden funcionalidades específicas a las notificaciones.
+  - Clases que añaden funcionalidades específicas a las notificaciones y modifican el mensaje antes de enviarlo.
 
 - **Cliente**: `Main`
-  - Clase principal que muestra cómo usar las notificaciones decoradas.
+  - Clase principal que muestra cómo usar las notificaciones decoradas, creando instancias de cada tipo de notificación y enviando mensajes.

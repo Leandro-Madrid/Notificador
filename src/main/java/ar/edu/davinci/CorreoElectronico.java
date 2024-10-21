@@ -8,6 +8,6 @@ public class CorreoElectronico extends NotificacionDecorator {
     @Override
     public void enviar_mensaje(String mensaje) {
         String mensajeConEncabezado = "Enviando correo: " + mensaje;
-        super.enviar_mensaje(mensajeConEncabezado);
+        notificacion.enviar_mensaje(mensajeConEncabezado);
     }
 }

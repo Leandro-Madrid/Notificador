@@ -8,7 +8,7 @@ public class SMS extends NotificacionDecorator {
     @Override
     public void enviar_mensaje(String mensaje) {
         String mensajeConPrefijo = "SMS: " + mensaje;
-        super.enviar_mensaje(mensajeConPrefijo);
+        notificacion.enviar_mensaje(mensajeConPrefijo);
     }
 }
 
